@@ -1,10 +1,14 @@
 var pkg = require('./package.json');    
 var path = require('path');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-console.log('vendor', Object.keys(pkg.dependencies))
+// HtmlWebpackPlugin
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// extract-text-webpack-plugin
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const extractCSS = new ExtractTextPlugin('stylesheets/[name]-one.css');
+// const extractLESS = new ExtractTextPlugin('stylesheets/[name]-two.css');
 
 module.exports = {
     mode: 'production',
@@ -102,7 +106,15 @@ module.exports = {
         // }),
 
         // 分离CSS和JS文件(不再一起打包在bundle.js里)
-        new ExtractTextPlugin('/css/[name].[chunkhash:8].css'),
+        // new ExtractTextPlugin('/css/[name].[chunkhash:8].css'),
+        // new ExtractTextPlugin({
+        //     filename: (getPath) => {
+        //         return getPath('css/[name].css').replace('css/js', 'css');
+        //     },
+        //     allChunks: true
+        // }),
+        // extractCSS,
+        // extractLESS,
 
         // 提供公共代码
         // 新版webpack里已作废

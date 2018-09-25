@@ -5,8 +5,13 @@ import './static/css/common.less';
 
 class Hello extends React.Component {
     render() {
+        const css = {
+            marginTop: '60px',
+            fontSize: '30px',
+            color: 'red'
+        };
         return (
-            <div>hello world</div>
+            <div style={css}>hello world!!!</div>
         );
     }
 }
