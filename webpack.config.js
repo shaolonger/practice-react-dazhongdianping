@@ -74,7 +74,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: __dirname + '/app/index.tmpl.html'
         }),
-        // 热加载插件
+        // 启动模块热加载插件
         new webpack.HotModuleReplacementPlugin(),
         // 打开浏览器
         new OpenBrowserPlugin({
@@ -87,7 +87,7 @@ module.exports = {
     ],
     devServer: {
         historyApiFallback: true, // 所有跳转指向index.html(开发单页非常有用)
-        inline: true, // 实施刷新
-        hot: true // 热加载(使用HotModuleReplacementPlugin)
+        inline: true, // 实时刷新(默认值为true)
+        hot: true // 模块热加载(使用HotModuleReplacementPlugin)
     }
 }
