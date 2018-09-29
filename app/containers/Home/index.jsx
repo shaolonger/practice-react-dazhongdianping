@@ -4,11 +4,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setUserName, setCarData } from '../../store/actions';
 
+// fetch测试
+import { getData } from '../../fetch/test';
+
 export class Home extends React.Component{
     componentDidMount() {
         let { setUserName, setCarData } = this.props;
         setUserName('通过redux设置的用户名');
         setCarData();
+        // fetch测试
+        getData();
     }
     render() {
         // 从props里解构store
