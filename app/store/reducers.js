@@ -11,8 +11,7 @@ function userName(state = defaultState.userName, action) {
     }
 }
 
-function carsData(state = defaultState.carData, action) {
-    console.log('action_car', action.data)
+function carData(state = defaultState.carData, action) {
     switch (action.type) {
         case 'SET_CARDATA':
             return action.data;
@@ -23,5 +22,5 @@ function carsData(state = defaultState.carData, action) {
 
 export default combineReducers({
     userName,
-    carsData
+    carData
 })

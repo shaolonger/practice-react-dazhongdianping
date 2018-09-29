@@ -2,19 +2,15 @@ import React from 'react';
 
 // react-redux
 import { connect } from 'react-redux';
-import { setUserName, setCarsData } from '../../store/actions';
+import { setUserName, setCarData } from '../../store/actions';
 
 export class Home extends React.Component{
-    constructor(props) {
-        super(props);
-    }
     componentDidMount() {
-        let { setUserName, setCarsData } = this.props;
+        let { setUserName, setCarData } = this.props;
         setUserName('通过redux设置的用户名');
-        setCarsData();
+        setCarData();
     }
     render() {
-        // console.log('props', this.props);
         // 从props里解构store
         let { userName, carData } = this.props;
         return (
@@ -22,12 +18,12 @@ export class Home extends React.Component{
                 <h1>HOME页面</h1>
                 <p>用户名:{userName}</p>
                 {
-                    carData && carData.length ?
+                    carData.length ?
                         (
                             <ul>
                                 {
                                     carData.map((item, index) => {
-                                        <li key={index}>{item.name}</li>
+                                        return <li key={index}>序号{index}:{item.title}</li>
                                     })
                                 }
                             </ul>
@@ -52,8 +48,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         setUserName(...args) {
             dispatch(setUserName(...args))
         },
-        setCarsData(...args) {
-            dispatch(setCarsData(...args))
+        setCarData(...args) {
+            dispatch(setCarData(...args))
         }
     }
 }

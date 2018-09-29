@@ -2,5 +2,5 @@
 
 export default {
     userName: '用户名',
-    carData: '车辆数据'
+    carData: []
 }

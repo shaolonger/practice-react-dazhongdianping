@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDom from 'react-dom';
 
 import './static/css/common.less';
 
@@ -19,21 +19,21 @@ import store from './store/store';
 class Index extends React.Component {
     render() {
         return (
-            <Provider store={store}>
-                <HashRouter>
-                    <div>
-                        <Route path="/" exact component={Home}></Route>
-                        <Route path="/detail" component={Detail}></Route>
-                        <Route path="/list" component={List}></Route>
-                        <Route component={NotFound}></Route>
-                    </div>
-                </HashRouter>
-            </Provider>
+            <HashRouter>
+                <div>
+                    <Route path="/" exact component={Home}></Route>
+                    <Route path="/detail" component={Detail}></Route>
+                    <Route path="/list" component={List}></Route>
+                    <Route component={NotFound}></Route>
+                </div>
+            </HashRouter>
         );
     }
 }
 
-render(
-    <Index />,
+ReactDom.render(
+    <Provider store={store}>
+        <Index />
+    </Provider>,
     document.getElementById('root')
 );

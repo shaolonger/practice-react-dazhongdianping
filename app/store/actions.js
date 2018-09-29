@@ -7,7 +7,7 @@ export function setUserName(data) {
     }
 }
 
-export function setCarsData(data) {
+export function setCarData() {
     return (dispatch, getState) => {
         const url = 'http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10';
         window.fetch(url, {
