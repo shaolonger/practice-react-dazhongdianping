@@ -6,6 +6,7 @@ import { setUserName, setCarData } from '../../store/actions';
 
 // fetch测试
 import get from '../../fetch/get';
+import post from '../../fetch/post';
 
 export class Home extends React.Component{
     componentDidMount() {
@@ -13,11 +14,18 @@ export class Home extends React.Component{
         setUserName('通过redux设置的用户名');
         setCarData();
         // fetch测试
-        const url = 'http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10';
-        get(url)
+        // const url = 'http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10';
+        get('/api/get')
+            .then(res => res.text())
+            .then(text => console.log('res_get', text))
+            .catch(err => console.log('err_get', err));
+        post('/api/post', {
+            uid: '123',
+            username: 'xiaoming'
+        })
             .then(res => res.json())
-            .then(json => console.log(json))
-            .catch(err => console.log(err));
+            .then(json => console.log('res_post', json))
+            .catch(err => console.log('err_post', err));
     }
     render() {
         // 从props里解构store

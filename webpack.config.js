@@ -88,6 +88,12 @@ module.exports = {
     devServer: {
         historyApiFallback: true, // 所有跳转指向index.html(开发单页非常有用)
         inline: true, // 实时刷新(默认值为true)
-        hot: true // 模块热加载(使用HotModuleReplacementPlugin)
+        hot: true, // 模块热加载(使用HotModuleReplacementPlugin)
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000',
+                secure: false
+            }
+        }
     }
 }
