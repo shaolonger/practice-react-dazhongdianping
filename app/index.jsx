@@ -8,8 +8,10 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 
 // containers
 import Home from './containers/Home';
+import City from './containers/City';
+import User from './containers/User';
 import Detail from './containers/Detail';
-import List from './containers/List';
+import Search from './containers/Search';
 import NotFound from './containers/NotFount';
 
 // react-redux
@@ -23,8 +25,10 @@ class Index extends React.Component {
                 <div>
                     <Switch>
                         <Route path="/" exact component={Home}></Route>
+                        <Route path="/city" component={City}></Route>
+                        <Route path="/user" component={User}></Route>
+                        <Route path="/search" component={Search}></Route>
                         <Route path="/detail" component={Detail}></Route>
-                        <Route path="/list" component={List}></Route>
                         <Route component={NotFound}></Route>
                     </Switch>
                 </div>
