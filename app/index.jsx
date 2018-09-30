@@ -4,7 +4,7 @@ import ReactDom from 'react-dom';
 import './static/css/common.less';
 
 // react-router-dom
-import { HashRouter, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 // containers
 import Home from './containers/Home';
@@ -21,10 +21,12 @@ class Index extends React.Component {
         return (
             <HashRouter>
                 <div>
-                    <Route path="/" exact component={Home}></Route>
-                    <Route path="/detail" component={Detail}></Route>
-                    <Route path="/list" component={List}></Route>
-                    <Route component={NotFound}></Route>
+                    <Switch>
+                        <Route path="/" exact component={Home}></Route>
+                        <Route path="/detail" component={Detail}></Route>
+                        <Route path="/list" component={List}></Route>
+                        <Route component={NotFound}></Route>
+                    </Switch>
                 </div>
             </HashRouter>
         );
