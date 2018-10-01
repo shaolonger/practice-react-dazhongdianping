@@ -2,5 +2,6 @@
 
 export default {
     userName: '用户名',
-    carData: []
+    carData: [],
+    cityInfo: '北京'
 }

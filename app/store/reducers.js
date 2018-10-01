@@ -20,7 +20,17 @@ function carData(state = defaultState.carData, action) {
     }
 }
 
+function cityInfo(state = defaultState.cityInfo, action) {
+    switch (action.type) {
+        case 'SET_CITY':
+            return action.data;
+        default:
+            return state;
+    }
+}
+
 export default combineReducers({
     userName,
-    carData
+    carData,
+    cityInfo
 })
