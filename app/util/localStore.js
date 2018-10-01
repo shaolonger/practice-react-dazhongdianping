@@ -15,7 +15,7 @@ export default {
     setItem: function (key, value) {
         try {
             // ios safari无痕模式下使用localStorage.setItem会报错
-            lcoalStorage.setItem(key, value);
+            localStorage.setItem(key, value);
         } catch (ex) {
             // 开发环境下提示error
             console.error('localStorage.getItem报错', ex.message);
