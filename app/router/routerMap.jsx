@@ -32,7 +32,7 @@ class RouterMap extends React.Component {
         let cityName = localStore.getItem(CITYNAME);
         if (cityName == null) {
             cityName = '北京';
-            localStore.setItem('CITYNAME', cityName);
+            localStore.setItem(CITYNAME, cityName);
         }
         let { setCity } = this.props;
         setCity(cityName);
