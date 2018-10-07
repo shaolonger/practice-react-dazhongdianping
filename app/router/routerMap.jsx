@@ -15,6 +15,8 @@ import User from '../containers/User';
 import Detail from '../containers/Detail';
 import Search from '../containers/Search';
 import NotFound from '../containers/NotFount';
+// components
+import Header from '../components/Header';
 
 // others
 import { CITYNAME } from '../config/localStorageKey';
@@ -43,8 +45,7 @@ class RouterMap extends React.Component {
             this.state.initDone ?
                 <div>
                     <div>
-                        <p>header</p>
-                        <p>{city}</p>
+                        <Header city={city} />
                     </div>
                     <HashRouter>
                         <Switch>
@@ -73,7 +74,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setCity(...args) {
-            dispatch(setCity(...args))
+            dispatch(setCity(...args));
         }
     };
 }
