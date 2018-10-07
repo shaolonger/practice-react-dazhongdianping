@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 import './static/css/common.less';
+import './static/css/font.css';
 
 // components
 import RouterMap from './router/routerMap';

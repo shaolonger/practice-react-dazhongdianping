@@ -16,7 +16,7 @@ import Detail from '../containers/Detail';
 import Search from '../containers/Search';
 import NotFound from '../containers/NotFount';
 // components
-import Header from '../components/Header';
+import HomeHeader from '../components/HomeHeader';
 
 // others
 import { CITYNAME } from '../config/localStorageKey';
@@ -40,12 +40,12 @@ class RouterMap extends React.Component {
         setCity(cityName);
     }
     render() {
-        let { city } = this.props;
+        let { cityName } = this.props;
         return (
             this.state.initDone ?
                 <div>
                     <div>
-                        <Header city={city} />
+                        <HomeHeader cityName={cityName} />
                     </div>
                     <HashRouter>
                         <Switch>
@@ -67,14 +67,15 @@ class RouterMap extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        city: state.cityInfo
+        cityName: state.cityInfo
     };
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         setCity(...args) {
-            dispatch(setCity(...args));
+            // dispatch(setCity(...args));
+            bindActionCreators(setCity(...args), dispatch);
         }
     };
 }
