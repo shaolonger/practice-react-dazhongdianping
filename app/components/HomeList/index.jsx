@@ -8,7 +8,7 @@ import Item from './Item';
 export default class HomeList extends React.Component{
     render() {
         return (
-            <div>
+            <div className="list-container">
                 {
                     this.props.data.map((item, index) => {
                         return (
