@@ -57,7 +57,6 @@ class RouterMap extends React.Component {
                             <Route component={NotFound}></Route>
                         </Switch>
                     </HashRouter>
-                    <div>footer</div>
                 </div>
                 :
                 <div>加载中...</div>
