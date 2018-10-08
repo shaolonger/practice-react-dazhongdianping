@@ -1,5 +1,8 @@
 import React from 'react';
 
+// react-router-dom
+import { Link } from 'react-router-dom';
+
 import './style.less'
 
 export default class HomeHeader extends React.Component{
@@ -7,9 +10,11 @@ export default class HomeHeader extends React.Component{
         return (
             <div id="home-header">
                 <div className="home-header-left">
-                    <span>{this.props.cityName}</span>
-                    &nbsp;
-                    <i className="icon-angle-down"></i>
+                    <Link to="/city">
+                        <span>{this.props.cityName}</span>
+                        &nbsp;
+                        <i className="icon-angle-down"></i>
+                    </Link>
                 </div>
                 <div className="home-header-middle">
                     <div className="search-container">
