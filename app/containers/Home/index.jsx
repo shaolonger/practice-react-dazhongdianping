@@ -7,7 +7,6 @@ import Ad from './subPage/Ad';
 import List from './subPage/List';
 
 // redux
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setCity } from '../../store/actions';
 
@@ -47,8 +46,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setCity(...args) {
-            // dispatch(setCity(...args));
-            bindActionCreators(setCity(...args), dispatch);
+            dispatch(setCity(...args));
         }
     };
 }
