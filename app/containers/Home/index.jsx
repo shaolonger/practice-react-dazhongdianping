@@ -3,6 +3,7 @@ import React from 'react';
 // containers and components
 import Category from '../../components/Category';
 import Ad from './subPage/Ad';
+import List from './subPage/List';
 
 export default class Home extends React.Component{
     render() {
@@ -10,6 +11,7 @@ export default class Home extends React.Component{
             <div>
                 <Category />
                 <Ad />
+                <List />
             </div>
         );
     }
