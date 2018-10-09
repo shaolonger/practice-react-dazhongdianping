@@ -3,6 +3,7 @@ import React from 'react';
 // components
 import Header from '../../components/Header';
 import Info from './subPage/Info';
+import Comment from './subPage/Comment';
 
 export default class extends React.Component{
     render() {
@@ -11,6 +12,7 @@ export default class extends React.Component{
             <div>
                 <Header title="商户详情" />
                 <Info id={id} />
+                <Comment id={id} />
             </div>
         );
     }

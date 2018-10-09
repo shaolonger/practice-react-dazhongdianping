@@ -7,6 +7,7 @@ var app = new KOA();
 const AD = require('./home/ad');
 const LIST = require('./home/list');
 const INFO = require('./detail/info');
+const COMMENT = require('./detail/comment');
 
 // router.get('/api/get', async ctx => {
 //     ctx.body = 'hellow koa';
@@ -32,10 +33,16 @@ router.get('/api/homelist/:city/:page', (ctx) => {
 })
 
 router.get('/api/detail/info/:id', (ctx) => {
+    ctx.body = INFO;
+})
+
+router.get('/api/detail/comment/:id/:page', (ctx) => {
     var params = ctx.params;
     var id = params.id;
+    var page = params.page;
     console.log('当前商户id', id);
-    ctx.body = INFO;
+    console.log('当前评论页数', page);
+    ctx.body = COMMENT;
 })
 
 app.use(router.routes());
