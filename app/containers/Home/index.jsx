@@ -9,6 +9,7 @@ import List from './subPage/List';
 // redux
 import { connect } from 'react-redux';
 import { setCity } from '../../store/actions';
+import { bindActionCreators } from 'redux';
 
 // others
 import { CITYNAME } from '../../config/localStorageKey';

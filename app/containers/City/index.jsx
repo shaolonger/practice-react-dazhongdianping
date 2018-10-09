@@ -8,6 +8,7 @@ import CityList from '../../components/CityList';
 // redux
 import { connect } from 'react-redux';
 import { setCity } from '../../store/actions';
+import { bindActionCreators } from 'redux';
 
 // localstore
 import localStore from '../../util/localStore';
@@ -20,9 +21,14 @@ class City extends React.Component{
             <div>
                 <CityHeader title="选择城市" />
                 <CurrentCity cityName={cityName} />
-                <CityList changeFn={this.props.changeFn} />
+                <CityList changeFn={this.changeFn.bind(this)} />
             </div>
         );
+    }
+    changeFn(cityName) {
+        if (!cityName) return;
+        this.props.setCity(cityName);
+        localStore.setItem(CITYNAME, cityName);
     }
 }
 
@@ -34,11 +40,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        changeFn(...args) {
-            dispatch(setCity(...args));
-            const city = args[0];
-            localStore.setItem(CITYNAME, city);
-        }
+        setCity: bindActionCreators(setCity, dispatch)
     }
 }
 
