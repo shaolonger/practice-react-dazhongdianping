@@ -3,6 +3,8 @@ import React from 'react';
 // history
 import { createHashHistory } from 'history';
 
+import './style.less';
+
 export default class HomeSearchInput extends React.Component{
     render() {
         return (
