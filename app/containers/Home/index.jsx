@@ -46,9 +46,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setCity(...args) {
-            dispatch(setCity(...args));
-        }
+        setCity: bindActionCreators(setCity, dispatch)
     };
 }
 
