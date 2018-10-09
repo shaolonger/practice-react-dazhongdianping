@@ -6,3 +6,12 @@ export function setCity(data) {
         });
     }
 }
+
+export function setUserName(data) {
+    return (dispatch) => {
+        dispatch({
+            type: 'SET_USERINFO',
+            data: data
+        });
+    }
+}

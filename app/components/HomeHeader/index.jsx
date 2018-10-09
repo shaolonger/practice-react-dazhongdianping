@@ -26,7 +26,9 @@ export default class HomeHeader extends React.Component{
                     </div>
                 </div>
                 <div className="home-header-right">
-                    <i className="icon-user"></i>
+                    <Link to="/login">
+                        <i className="icon-user"></i>
+                    </Link>
                 </div>
             </div>
         );

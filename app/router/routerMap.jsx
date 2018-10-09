@@ -7,6 +7,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 import Home from '../containers/Home';
 import City from '../containers/City';
 import User from '../containers/User';
+import Login from '../containers/Login';
 import Detail from '../containers/Detail';
 import Search from '../containers/Search';
 import NotFound from '../containers/NotFount';
@@ -27,6 +28,7 @@ export default class RouterMap extends React.Component {
                             <Route path="/" exact component={Home}></Route>
                             <Route path="/city" component={City}></Route>
                             <Route path="/user" component={User}></Route>
+                            <Route path="/login" component={Login}></Route>
                             <Route path="/search/:category/:keyword?" component={Search}></Route>
                             <Route path="/detail/:id" component={Detail}></Route>
                             <Route component={NotFound}></Route>
