@@ -4,8 +4,9 @@ const koaBody = require('koa-body')();
 
 var app = new KOA();
 
-const AD = require('./Home/ad');
-const LIST = require('./Home/list');
+const AD = require('./home/ad');
+const LIST = require('./home/list');
+const INFO = require('./detail/info');
 
 // router.get('/api/get', async ctx => {
 //     ctx.body = 'hellow koa';
@@ -28,6 +29,13 @@ router.get('/api/homelist/:city/:page', (ctx) => {
     console.log('当前城市', city);
     console.log('当前页数', page);
     ctx.body = LIST;
+})
+
+router.get('/api/detail/info/:id', (ctx) => {
+    var params = ctx.params;
+    var id = params.id;
+    console.log('当前商户id', id);
+    ctx.body = INFO;
 })
 
 app.use(router.routes());
