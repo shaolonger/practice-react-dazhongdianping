@@ -3,6 +3,9 @@ import React from 'react';
 // react-router-dom
 import { Link } from 'react-router-dom';
 
+// components
+import HomeSearchInput from '../HomeSearchInput';
+
 import './style.less'
 
 export default class HomeHeader extends React.Component{
@@ -19,7 +22,7 @@ export default class HomeHeader extends React.Component{
                 <div className="home-header-middle">
                     <div className="search-container">
                         <i className="icon-search"></i>
-                        <input type="text" placeholder="请输入关键字" />
+                        <HomeSearchInput />
                     </div>
                 </div>
                 <div className="home-header-right">
