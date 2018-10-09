@@ -29,6 +29,7 @@ class City extends React.Component{
         if (!cityName) return;
         this.props.setCity(cityName);
         localStore.setItem(CITYNAME, cityName);
+        this.props.history.push('/');
     }
 }
 
