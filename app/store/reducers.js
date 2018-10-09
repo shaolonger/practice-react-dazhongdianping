@@ -20,7 +20,24 @@ function userInfo(state = defaultState.userInfo, action) {
     }
 }
 
+function collect(state = defaultState.collect, action) {
+    switch (action.type) {
+        case 'ADD_COLLECT':
+            state.unshift(action.data);
+            return state;
+        case 'DELETE_COLLECT':
+            return state.filter(item => {
+                if (item.id !== action.data.id) {
+                    return item;
+                }
+            })
+        default:
+            return state;
+    }
+}
+
 export default combineReducers({
     cityInfo,
-    userInfo
+    userInfo,
+    collect
 })

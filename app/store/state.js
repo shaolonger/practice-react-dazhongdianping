@@ -2,5 +2,6 @@
 
 export default {
     userInfo: {},
-    cityInfo: '北京'
+    cityInfo: '北京',
+    collect: []
 }

@@ -15,3 +15,22 @@ export function setUserName(data) {
         });
     }
 }
+
+export const setCollect = {
+    add(data) {
+        return (dispatch) => {
+            dispatch({
+                type: 'ADD_COLLECT',
+                data: data
+            })
+        }
+    },
+    del(data) {
+        return (dispatch) => {
+            dispatch({
+                type: 'DELETE_COLLECT',
+                data: data
+            })
+        }
+    }
+}
