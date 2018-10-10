@@ -8,6 +8,7 @@ const AD = require('./home/ad');
 const LIST = require('./home/list');
 const INFO = require('./detail/info');
 const COMMENT = require('./detail/comment');
+const ORDERLIST = require('./user/orderList');
 
 // router.get('/api/get', async ctx => {
 //     ctx.body = 'hellow koa';
@@ -43,6 +44,10 @@ router.get('/api/detail/comment/:id/:page', (ctx) => {
     console.log('当前商户id', id);
     console.log('当前评论页数', page);
     ctx.body = COMMENT;
+})
+
+router.get('/api/orderlist/:username', (ctx) => {
+    ctx.body = ORDERLIST;
 })
 
 app.use(router.routes());
