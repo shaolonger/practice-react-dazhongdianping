@@ -8,9 +8,11 @@ export default class OrderListComponent extends React.Component{
         const data = this.props.data;
         return (
             <div>
-                {data.map((item, index) => {
-                    return <Item key={index} data={item} />
-                })}
+                {
+                    data.map((item, index) => {
+                        return <Item key={index} data={item} submitComment={this.props.submitComment} />
+                    })
+                }
             </div>
         );
     }

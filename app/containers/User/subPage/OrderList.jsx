@@ -3,6 +3,7 @@ import OrderListComponent from '../../../components/OrderListComponent';
 
 // fetch
 import get from '../../../fetch/get';
+import post from '../../../fetch/post';
 
 import './style.less';
 
@@ -19,7 +20,7 @@ export default class OrderList extends React.Component{
                 <h2>您的订单</h2>
                 {
                     this.state.data.length
-                        ? <OrderListComponent data={this.state.data} />
+                        ? <OrderListComponent data={this.state.data} submitComment={this.submitComment} />
                         : <div>暂无数据</div>
                 }
             </div>
@@ -38,6 +39,20 @@ export default class OrderList extends React.Component{
                 this.setState({
                     data: json
                 })
+            })
+    }
+    submitComment(id, content, star, callback) {
+        let url = `/api/submitComment`;
+        let data = {
+            id,
+            content,
+            star
+        };
+        post(url, data).then(res => res.json())
+            .then(json => {
+                if (json.errno === 0) {
+                    callback();
+                }
             })
     }
 }

@@ -50,5 +50,12 @@ router.get('/api/orderlist/:username', (ctx) => {
     ctx.body = ORDERLIST;
 })
 
+router.post('/api/submitComment', (ctx) => {
+    ctx.body = {
+        errno: 0,
+        msg: 'ok'
+    };
+})
+
 app.use(router.routes());
 app.listen(3000);

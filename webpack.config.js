@@ -82,7 +82,7 @@ module.exports = {
         }),
         // 通过全局__DEV__判断是否dev模式
         new webpack.DefinePlugin({
-            __DEV__: JSON.stringify(JSON.parse((process.env.NODE_ENV == 'dev' || 'false')))
+            __DEV__: JSON.stringify((process.env.NODE_ENV == 'development' || 'false')),
         })
     ],
     devServer: {
