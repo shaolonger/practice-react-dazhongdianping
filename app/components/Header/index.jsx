@@ -14,6 +14,11 @@ export default class Header extends React.Component{
         );
     }
     clickHandle() {
-        window.history.back()
+        const backHandler = this.props.backHandler;
+        if (backHandler) {
+            backHandler();
+        } else {
+            window.history.back()
+        }
     }
 }

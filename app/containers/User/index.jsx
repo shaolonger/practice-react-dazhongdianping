@@ -15,7 +15,7 @@ class User extends React.Component{
     render() {
         return (
             <div>
-                <Header title="用户主页" />
+                <Header title="用户主页" backHandler={this.backHandler} />
                 <UserInfo username={this.props.userInfo.username} city={this.props.cityName} />
                 <OrderList username={this.props.userInfo.username} />
             </div>
@@ -25,6 +25,9 @@ class User extends React.Component{
         if (!this.props.userInfo.username) {
             createHashHistory().push('/login');
         }
+    }
+    backHandler() {
+        createHashHistory().push('/');
     }
 }
 
