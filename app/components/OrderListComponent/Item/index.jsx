@@ -17,9 +17,6 @@ export default class Item extends React.Component{
         this.setState({
             commentState: this.props.data.commentState
         });
-        console.log('process.env.NODE_ENV', process.env.NODE_ENV);
-        console.log('is DEV', process.env.NODE_ENV == 'development' || 'false');
-        console.log('__DEV__', __DEV__);
     }
     render() {
         const data = this.props.data;
